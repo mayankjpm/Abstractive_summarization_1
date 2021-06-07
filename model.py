@@ -253,7 +253,7 @@ class SummarizationModel(object):
 
       with tf.variable_scope('embedding'):
         if hps.pretrained_embeddings:
-          word2vec = load_embeddings('../input/trainedword2vec/word2vec_128d.txt', self._vocab.word2id, hps.rand_unif_init_mag)
+          word2vec = load_embeddings('/content/word2vec_128d.txt', self._vocab.word2id, hps.rand_unif_init_mag)
           self.embedding = tf.get_variable('embedding', [vsize, hps.emb_dim],
                                     dtype=tf.float32, initializer=tf.constant_initializer(word2vec))
           # self.assign_embedding = tf.assign(self.embedding, word2vec)
